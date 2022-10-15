@@ -17,7 +17,7 @@ jobs:
       - name: wget install
         run: |
           apt-get update
-          apt-get install wget curl
+          apt-get -qq install -y wget curl
 
       - name: Install Nightly Toolchain
         uses: actions-rs/toolchain@v1
