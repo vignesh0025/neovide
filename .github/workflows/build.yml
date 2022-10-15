@@ -14,7 +14,7 @@ jobs:
     steps:
       - name: wget install
         run: |
-          dnf -y tar git curl fontconfig-devel freetype-devel libX11-xcb libX11-devel
+          dnf -y install tar git curl fontconfig-devel freetype-devel libX11-xcb libX11-devel
           dnf -y groupinstall "Development Tools" "Development Libraries"
           
       - uses: actions/checkout@v2
