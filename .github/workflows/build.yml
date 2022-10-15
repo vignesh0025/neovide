@@ -9,7 +9,7 @@ jobs:
 
   build-linux:
     runs-on: ubuntu-latest
-    container: fedora:24
+    container: fedora:27
 
     steps:
       - name: wget install
