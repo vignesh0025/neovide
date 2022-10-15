@@ -14,7 +14,7 @@ jobs:
     steps:
       - name: wget install
         run: |
-          dnf -y --refresh install tar git curl fontconfig-devel freetype-devel libX11 libX11-devel libstdc++ libstdc++-devel libstdc++-static compat-libstdc++-33
+          dnf -y --refresh install tar git curl fontconfig-devel freetype-devel libX11 libX11-devel libstdc++ libstdc++-devel libstdc++-static compat-libstdc++-33 binutils
           dnf -y groupinstall "Development Tools" "Development Libraries"
           
       - uses: actions/checkout@v2
