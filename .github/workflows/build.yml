@@ -16,7 +16,7 @@ jobs:
       
       - name: wget install
         run: |
-          dnf -y git curl fontconfig-devel freetype-devel libX11-xcb libX11-devel
+          dnf -y tar git curl fontconfig-devel freetype-devel libX11-xcb libX11-devel
           dnf -y groupinstall "Development Tools" "Development Libraries"
 
       - name: Install Nightly Toolchain
