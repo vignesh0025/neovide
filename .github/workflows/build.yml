@@ -32,10 +32,6 @@ jobs:
 
       - uses: Swatinem/rust-cache@v1
 
-      - name: Check Formatting
-        run: |
-          cargo fmt --all -- --check
-
       - name: Build Release
         run: |
           cargo build --release
