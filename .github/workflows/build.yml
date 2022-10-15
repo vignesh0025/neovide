@@ -12,12 +12,14 @@ jobs:
     container: fedora:23
 
     steps:
-      - uses: actions/checkout@v2
-      
       - name: wget install
         run: |
           dnf -y tar git curl fontconfig-devel freetype-devel libX11-xcb libX11-devel
           dnf -y groupinstall "Development Tools" "Development Libraries"
+          
+      - uses: actions/checkout@v2
+      
+      
 
       - name: Install Nightly Toolchain
         uses: actions-rs/toolchain@v1
