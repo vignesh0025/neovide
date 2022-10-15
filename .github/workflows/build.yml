@@ -36,7 +36,7 @@ jobs:
       - name: Install dependencies and neovim
         run: |
           apt-get -qq install -y \
-            curl libfreetype-dev libfontconfig1-dev gnupg ca-certificates git gcc-multilib g++-multilib cmake libssl-dev pkg-config libfreetype6-dev libasound2-dev libexpat1-dev libxcb-composite0-dev libbz2-dev freeglut3-dev libxi-dev
+            curl libfreetype6-dev libfontconfig1-dev gnupg ca-certificates git gcc-multilib g++-multilib cmake libssl-dev pkg-config libfreetype6-dev libasound2-dev libexpat1-dev libxcb-composite0-dev libbz2-dev freeglut3-dev libxi-dev
 
       - name: Build Release
         run: |
