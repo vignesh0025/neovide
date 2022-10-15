@@ -9,11 +9,12 @@ jobs:
 
   build-linux:
     runs-on: ubuntu-latest
-    container: fedora:23
+    container: fedora:24
 
     steps:
       - name: wget install
         run: |
+          /lib64/libc.so.6
           dnf -y --refresh install tar git curl fontconfig-devel freetype-devel libX11 libX11-devel libstdc++ libstdc++-devel libstdc++-static compat-libstdc++-33 binutils
           dnf -y groupinstall "Development Tools" "Development Libraries"
           
