@@ -9,15 +9,15 @@ jobs:
 
   build-linux:
     runs-on: ubuntu-latest
-    container: ubuntu:16.04
+    container: fedora:23
 
     steps:
       - uses: actions/checkout@v2
       
       - name: wget install
         run: |
-          apt-get update
-          apt-get -qq install -y wget curl
+          dnf -y git curl fontconfig-devel freetype-devel libX11-xcb libX11-devel
+          dnf -y groupinstall "Development Tools" "Development Libraries"
 
       - name: Install Nightly Toolchain
         uses: actions-rs/toolchain@v1
@@ -32,11 +32,6 @@ jobs:
       - name: Check Formatting
         run: |
           cargo fmt --all -- --check
-
-      - name: Install dependencies and neovim
-        run: |
-          apt-get -qq install -y \
-            curl libfreetype6-dev libfontconfig1-dev gnupg ca-certificates git gcc-multilib g++-multilib cmake libssl-dev pkg-config libfreetype6-dev libasound2-dev libexpat1-dev libxcb-composite0-dev libbz2-dev freeglut3-dev libxi-dev
 
       - name: Build Release
         run: |
